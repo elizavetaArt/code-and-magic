@@ -7,6 +7,7 @@ let FONT_GAP = 15;
 let TEXT_WIDTH = 60;
 let BAR_HEIGHT = 30;
 let barWidth = CLOUD_WIDTH - GAP - TEXT_WIDTH - GAP;
+
 let renderCloud = function(ctx, x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
