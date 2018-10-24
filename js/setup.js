@@ -1,55 +1,10 @@
 let setupSimilar = document.querySelector('.setup-similar').classList.remove('hidden');
-let setupOpen = document.querySelector('.setup-open');
 let setup = document.querySelector('.setup');
-let setupClose = document.querySelector('.setup-close');
 let setupCoat = document.querySelector('.wizard-coat');
 let wizardEyes = document.querySelector('.wizard-eyes');
 let setupFireballWrap = document.querySelector('.setup-fireball-wrap');
 let similarListElement = document.querySelector('.setup-similar-list');
-let setupUserName = document.querySelector('.setup-user-name');
 let similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-
-let onPopupEscPress = function (evt) {
-    if (evt.keyCode === 27) {
-        closePopup();
-    }
-};
-let openPopup = function () {
-    setup.classList.remove('hidden');
-    document.addEventListener('keydown', onPopupEscPress);
-};
-let closePopup = function () {
-    setup.classList.add('hidden');
-    document.removeEventListener('keydown', onPopupEscPress);
-};
-
-setupOpen.addEventListener('click', function () {
-    openPopup();
-});
-setupOpen.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === 13) {
-        openPopup();
-    }
-});
-setupClose.addEventListener('click', function () {
-   closePopup();
-});
-setupClose.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === 13) {
-        closePopup();
-    }
-});
-setupCoat.addEventListener('click', function () {
-   setupCoat.style.fill = randomElements(coatColor);
-});
-wizardEyes.addEventListener('click', function () {
-   wizardEyes.style.fill = randomElements(eyesColor);
-});
-setupFireballWrap.addEventListener('click', function () {
-    setupFireballWrap.style.background = randomElements(fireball);
-});
-setupUserName.addEventListener('onchange', function () {
-});
 
 let firstName = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 let lastName = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
@@ -76,3 +31,13 @@ let createBlocks = function () {
     }
 };
 createBlocks();
+
+setupCoat.addEventListener('click', function () {
+    setupCoat.style.fill = randomElements(coatColor);
+});
+wizardEyes.addEventListener('click', function () {
+    wizardEyes.style.fill = randomElements(eyesColor);
+});
+setupFireballWrap.addEventListener('click', function () {
+    setupFireballWrap.style.background = randomElements(fireball);
+});
